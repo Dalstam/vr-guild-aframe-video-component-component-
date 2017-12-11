@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>video component - VR Guild - DS</title>
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    <script src="components/video_player.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<a-scene cursor="rayOrigin: mouse" vr-mode-ui="enabled: false">
+
+    <a-entity camera look-controls></a-entity>
+    <a-sky src="img/360/sky1.jpg"></a-sky>
+
+    <a-entity position="0 0 -5">
+        <a-entity id="myBtn" geometry="primitive: triangle;  height: 5;  " rotation="0 0 -90" position="0 0.5 "
+                  material="color:blue" videoplayer="video:video/Sample_water.mp4"></a-entity>
+        <a-entity id="myBtn1" geometry="primitive: triangle;  height: 5;  " rotation="0 0 -90" position="0 2 "
+                  material="color:red" videoplayer="video:video/Sample.mp4; delay:5000"></a-entity>
+    </a-entity>
+
+</a-scene>
+
+<!--The video modal -->
+<div id="videoModal" class="modal">
+    <!-- Modal content -->
+    <span class="close">&times;</span>
+    <div class="modal-content">
+        <video id="player" class="videoPlayer" controls>
+            <source id="videoSrc" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+
+</body>
+</html>
+
